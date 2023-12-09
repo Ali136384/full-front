@@ -6,9 +6,12 @@ function Post_type() {
   const [posts, setPosts] = useState([]);
   const getData = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/api/same-cat", {
-        category: para.type,
-      });
+      const res = await axios.post(
+        "https://full-wpqh.vercel.app/api/same-cat",
+        {
+          category: para.type,
+        }
+      );
       console.log(res.data);
       setPosts(res.data.categories);
     } catch (err) {
@@ -35,8 +38,11 @@ function Post_type() {
                       dangerouslySetInnerHTML={{ __html: ele.prev }}
                     ></div>
                   </div>
-                  <Link to={`/post-details/${ele._id}/${ele.category}`}>
-                    <button className=" bg-white border m-2 px-3 py-3 border-light-green text-teal-800 hover:bg-light-green duration-300 hover:rounded-xl">
+                  <Link
+                    className="flex justify-center "
+                    to={`/post-details/${ele._id}/${ele.category}`}
+                  >
+                    <button className="  bg-white border m-2 px-3 py-3 border-light-green text-teal-800 hover:bg-light-green duration-300 hover:rounded-xl">
                       See the details
                     </button>
                   </Link>

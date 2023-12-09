@@ -52,6 +52,7 @@ function Navbar() {
                 Swal.fire("Want to Logout ?").then((res) => {
                   if (res.isConfirmed) {
                     localStorage.removeItem("usernameUserAliHaseni");
+                    localStorage.removeItem("favo");
                     window.location.reload();
                   }
                 });

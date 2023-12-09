@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Write from "./pages/Write";
-import Single from "./pages/Single";
+import Update from "./pages/Update.jsx";
 import Posttype from "./pages/Post_type.jsx";
 import PostDetails from "./pages/PostDetails.jsx";
 import Profile from "./pages/Profile.jsx";
@@ -28,10 +28,6 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path: "/post/:id",
-        element: <Single></Single>,
-      },
-      {
         path: "/Write",
         element: <Write></Write>,
       },
@@ -42,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "/post-details/:id/:cat",
         element: <PostDetails></PostDetails>,
+      },
+      {
+        path: "/update/:id",
+        element: <Update></Update>,
       },
       {
         path: "/posts/:type",

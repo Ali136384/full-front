@@ -7,14 +7,17 @@ function PostDetails() {
   const [posts, setPosts] = useState([]);
   const [sameTitle, setsameTitle] = useState([]);
   const getdata = async () => {
-    const res = await axios.post("http://localhost:5000/api/postDetails", {
-      id: para.id,
-    });
+    const res = await axios.post(
+      "https://full-wpqh.vercel.app/api/postDetails",
+      {
+        id: para.id,
+      }
+    );
     setPosts(res.data.OnePost);
     console.log(res.data.OnePost);
     console.log(res.data);
     const sameCategories = await axios.post(
-      "http://localhost:5000/api/same-cat",
+      "https://full-wpqh.vercel.app/api/same-cat",
       {
         category: para.cat,
       }

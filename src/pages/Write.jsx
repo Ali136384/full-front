@@ -24,7 +24,7 @@ function Write() {
     try {
       e.preventDefault();
 
-      const post = await axios.post("http://localhost:5000/api/posts", {
+      const post = await axios.post("https://full-wpqh.vercel.app/api/posts", {
         title: title,
         desc: desc,
         img: img,

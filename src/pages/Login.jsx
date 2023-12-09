@@ -10,12 +10,17 @@ function Login() {
   const chekUser = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/auth/login", {
-        username,
-        password,
-      });
-      console.log(username, password);
+      const res = await axios.post(
+        "https://full-wpqh.vercel.app/api/auth/login",
+        {
+          username,
+          password,
+        }
+      );
+
       localStorage.setItem("usernameUserAliHaseni", username);
+      localStorage.setItem("favo", res.data.user.favorites);
+      console.log(res.data.user.favorites);
       navigate("/");
     } catch (err) {
       console.log(err);

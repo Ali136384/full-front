@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import axios from "axios";
 function Register() {
@@ -9,15 +10,14 @@ function Register() {
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/register", {
+      await axios.post("https://full-wpqh.vercel.app/api/auth/register", {
         username,
         email,
         password,
       });
-
-      console.log(res);
+      Swal.fire("User Created Successfuly !", "You Can Login Now !", "success");
     } catch (err) {
-      console.log(err);
+      alert("Error");
     }
   };
 
